@@ -1,0 +1,66 @@
+@import '../styles/mixins.scss';
+
+@media (max-width: 1000px) {
+  .wrapper {
+    .container {
+      width: 90%;
+
+      main {
+        .main_container {
+          .card {
+            width: 29vw;
+            height: 25.73vw;
+
+            .card_container {
+              padding: 15px;
+
+              .arrow {
+                width: 6vw;
+                height: 2.6vw;
+              }
+
+              .card_container_header {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .card_container_header_numb {
+                  width: 4vw;
+                  height: 4vw;
+
+                  .card_container_header_numb_content {
+                    width: 3.6vw;
+                    height: 3.6vw;
+                    font-size: 1.75vw;
+                  }
+                }
+
+                .card_container_header_text {
+                  font-size: 1.35vw;
+                }
+              }
+            }
+          }
+
+          .card:nth-child(1) {
+            .card_container {
+              @include imageCardStyles(null, null, null, 20vw, 18.875vw);
+            }
+          }
+
+          .card:nth-child(2) {
+            .card_container {
+              @include imageCardStyles(null, null, null, 24.5875vw, 22.26vw);
+            }
+          }
+
+          .card:nth-child(3) {
+            .card_container {
+              @include imageCardStyles(null, null, null, 25.5125vw, 19.075vw);
+            }
+          }
+        }
+      }
+    }
+  }
+}

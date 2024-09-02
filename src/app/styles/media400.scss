@@ -1,0 +1,39 @@
+@import './mixins.scss';
+
+@media (max-width: 400px) {
+  .wrapper {
+    .container {
+      main {
+        .main_container {
+          .card {
+            .card_container {
+              .arrow {
+                right: -7%;
+              }
+            }
+          }
+
+          .card:nth-child(1) {
+            .card_container {
+              @include imageCardStyles(null, 3%, null, 84.72vw, 290px);
+            }
+          }
+
+          .card:nth-child(2) {
+            .card_container {
+              @include imageCardStyles(null, -10%, -5%, 105vw, null);
+            }
+          }
+
+          .card:nth-child(3) {
+            margin-bottom: 0;
+
+            .card_container {
+              @include imageCardStyles(null, -10%, -10%, 109vw, null);
+            }
+          }
+        }
+      }
+    }
+  }
+}

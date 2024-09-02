@@ -1,0 +1,163 @@
+@import './templateSelectors.scss';
+@import './mixins.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 66.7vw;
+    padding: 40px 0;
+
+    header {
+      font-size: 24px;
+      line-height: 28px;
+      color: #22284a;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    main {
+      @extend %flex-center;
+      box-shadow: 0px 24px 48px 0px #172b97b8;
+      background: linear-gradient(
+        to top,
+        rgba(23, 43, 151, 0.55) 0%,
+        rgba(174, 183, 238, 0.8) 100%
+      );
+      padding: 4px;
+      border-radius: 24px;
+
+      .main_container {
+        @include blockSpecifications(100%, null, 5px, 20px);
+        background: linear-gradient(180deg, #d3d2f8 0%, #5356fd85 7%, #2921a5 100%);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .card {
+          @include blockSpecifications(21.6vw, 18.33vw, 2px, 20px);
+          @extend %flex-center;
+
+          .card_container {
+            @include blockSpecifications(100%, 100%, 20px, 20px);
+            position: relative;
+
+            .arrow {
+              position: absolute;
+              top: 25%;
+              right: -12%;
+              width: 4.8vw;
+              height: 2.083vw;
+              z-index: 1;
+            }
+
+            .card_container_header {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              .card_container_header_numb {
+                @include blockSpecifications(2.5vw, 2.5vw, null, 50%);
+                @extend %flex-center;
+                margin-right: 10px;
+
+                .card_container_header_numb_content {
+                  @include blockSpecifications(2.23vw, 2.23vw, null, 50%);
+                  font-size: 1.25vw;
+                  font-weight: 700;
+                  color: #ffffff;
+                  @extend %flex-center;
+                }
+              }
+
+              .card_container_header_text {
+                font-size: 1.04vw;
+                font-weight: 700;
+                color: #ffffff;
+              }
+            }
+          }
+        }
+
+        .card:nth-child(1) {
+          @include cardBackgroundStyles(
+            rgba(122, 124, 235, 0.32),
+            #475fdf,
+            #6377e1,
+            #2920a5,
+            #a0aef6,
+            -12%,
+            13%,
+            15.9vw,
+            15.1vw
+          );
+        }
+
+        .card:nth-child(2) {
+          @include cardBackgroundStyles(
+            rgba(255, 128, 236, 0.32),
+            #b247df,
+            #e163e1,
+            #741595,
+            #e98ae9,
+            -16.5%,
+            3%,
+            19.67vw,
+            17.81vw
+          );
+        }
+
+        .card:nth-child(3) {
+          @include cardBackgroundStyles(
+            rgba(108, 253, 125, 0.32),
+            #3a8207,
+            #55ce00,
+            #014d1d,
+            #95f351,
+            -11%,
+            3%,
+            20.41vw,
+            15.26vw
+          );
+        }
+      }
+    }
+
+    footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 60px;
+
+      .button_border {
+        background: linear-gradient(180deg, #7af429 0%, #66e50c 100%);
+        box-shadow: 0px 0px 0px 4px #5bc0143d;
+        @extend %flex-center;
+        margin-right: 21%;
+        @include blockSpecifications(220px, 48px, 3px, 16px);
+
+        button {
+          @include blockSpecifications(100%, 100%, null, 14px);
+          background: linear-gradient(180deg, #5dc416 0%, #367b05 100%);
+          box-shadow: 0px 4px 8px 0px #3d93007a;
+          font-size: 16px;
+          font-weight: 400;
+          color: #ffffff;
+          @extend %flex-center;
+
+          img {
+            width: 24px;
+            height: 24px;
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import './media1300.scss';
+@import './media1000.scss';
+@import './media640.scss';
+@import './media400.scss';

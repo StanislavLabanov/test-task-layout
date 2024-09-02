@@ -1,0 +1,38 @@
+@mixin imageCardStyles($b, $l, $r, $w, $h) {
+  .card_container_image {
+    position: absolute;
+    bottom: $b;
+    left: $l;
+    right: $r;
+
+    img {
+      width: $w;
+      height: $h;
+    }
+  }
+}
+
+@mixin blockSpecifications($w, $h, $p, $br) {
+  width: $w;
+  height: $h;
+  padding: $p;
+  border-radius: $br;
+}
+
+@mixin cardBackgroundStyles($c1, $c2, $c3, $c4, $c5, $b, $l, $w, $h) {
+  background: linear-gradient(180deg, $c1 0%, $c2 100%);
+
+  .card_container {
+    background: linear-gradient(180deg, $c3 0%, $c4 100%);
+    .card_container_header {
+      .card_container_header_numb {
+        background: linear-gradient(360deg, $c5 0%, $c4 100%);
+        .card_container_header_numb_content {
+          background: linear-gradient(180deg, $c4 0%, $c3 100%);
+        }
+      }
+    }
+
+    @include imageCardStyles($b, $l, null, $w, $h);
+  }
+}
